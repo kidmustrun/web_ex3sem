@@ -1,16 +1,11 @@
 export interface Product {
-    code: number;
+    id: number;
     title: string;
     price: number;
     creator?: string;
-    type: number;
+    type: string;
     weight: number;
-    quantity: string;
+    quantity: number;
   }
   
-  export enum ProductType {
-    furniture,
-    tech,
-    book,
-    phone
-  }
+ 

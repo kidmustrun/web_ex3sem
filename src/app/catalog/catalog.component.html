@@ -1,1 +1,74 @@
-<p>catalog works!</p>
+<h5>Каталог</h5>
+<ng-container *ngIf="products.length>0">
+
+    <div class="card-deck mb-3 text-center" *ngFor="let product of products">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">{{ product.title }}, артикул {{ product.id }}</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">{{ product.price }}<small class="text-muted"> рублей</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>{{ product.type }}</li>
+                    <li>Производитель {{ product.creator }}</li>
+                    <li>Вес {{ product.weight }} кг</li>
+                    <li>Количество на складе: {{ product.quantity }}</li>
+                </ul>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary" (click)="showForm(product.id)">Панель редактирования</button>
+
+                <form [formGroup]="editForm">
+                    <div class="d-none " [id]="product.id">
+
+
+
+                        <input type="text" class="form-control" placeholder="Название" formControlName="title" />
+
+
+                        <input type="number" min="1" class="form-control" placeholder="Артикул" formControlName="id" />
+
+                        <input type="number" min="1" class="form-control" placeholder="Цена" formControlName="price" />
+                        <input type="text" class="form-control" placeholder="Производитель (необязательно)" formControlName="creator" />
+                        <input type="number" min="1" class="form-control" placeholder="Вес" formControlName="weight" />
+                        <input type="number" min="1" class="form-control" placeholder="Количество на складе" formControlName="quantity" />
+                        <select formControlName="type" class="custom-select">
+                              <option value="Мебель" >Мебель</option>
+                              <option value="Техника" >Техника</option>
+                              <option value="Книги" >Книги</option>
+                              <option value="Телефоны" >Телефоны</option>
+                      </select>
+
+
+
+
+                        <button [disabled]="editForm.controls['title'].invalid || editForm.controls['id'].invalid || editForm.controls['price'].invalid || editForm.controls['type'].invalid || editForm.controls['weight'].invalid || editForm.controls['quantity'].invalid" class="btn btn-outline-primary btn-sm"
+                            (click)="onEditProduct()">Редактировать</button>
+                        <button class="btn btn-outline-danger btn-sm" (click)="onDeleteProduct(product.id)">
+                            Удалить
+                            </button>
+                    </div>
+                </form>
+                <div class="alert alert-danger" *ngIf="editForm.controls['title'].invalid && editForm.controls['title'].touched">
+                    Не указано название
+                </div>
+                <div class="alert alert-danger" *ngIf="editForm.controls['id'].invalid && editForm.controls['id'].touched">
+                    Не указан артикул
+                </div>
+                <div class="alert alert-danger" *ngIf="editForm.controls['price'].invalid && editForm.controls['price'].touched">
+                    Не указана цена
+                </div>
+                <div class="alert alert-danger" *ngIf="editForm.controls['type'].invalid && editForm.controls['type'].touched">
+                    Не указан тип категории
+                </div>
+                <div class="alert alert-danger" *ngIf="editForm.controls['weight'].invalid && editForm.controls['weight'].touched">
+                    Не указан вес
+                </div>
+                <div class="alert alert-danger" *ngIf="editForm.controls['quantity'].invalid && editForm.controls['quantity'].touched">
+                    Не указано количество
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</ng-container>

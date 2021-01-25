@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "комод",
+      "price": 1000,
+      "creator": "",
+      "type": "Мебель",
+      "weight": 133,
+      "quantity": 144
+    },
+    {
+      "id": 2,
+      "title": "Телефон Honor",
+      "price": 21000,
+      "creator": "Honor",
+      "type": "Техника",
+      "weight": 0.2,
+      "quantity": 1050
+    }
+  ]
+}
