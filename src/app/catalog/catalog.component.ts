@@ -97,7 +97,7 @@ addQuantity(id){
 }
 minusQuantity(id){
   let index = this.products.findIndex((product) => product.id === id);
-  if (index !== -1) {
+  if (index !== -1 && this.products[index].quantity>0) {
     this.products[index].quantity-=1;
     let product_edit =  this.products[index];
     this.products.splice(index, 1, product_edit);
