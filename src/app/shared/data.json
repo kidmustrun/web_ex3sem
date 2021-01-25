@@ -2,12 +2,12 @@
   "products": [
     {
       "id": 1,
-      "title": "комод",
-      "price": 1000,
-      "creator": "",
+      "title": "Комод",
+      "price": 1500,
+      "creator": "Мебельная фабрика",
       "type": "Мебель",
-      "weight": 133,
-      "quantity": 144
+      "weight": 8,
+      "quantity": 137
     },
     {
       "id": 2,
@@ -17,6 +17,24 @@
       "type": "Техника",
       "weight": 0.2,
       "quantity": 1050
+    },
+    {
+      "id": 3,
+      "title": "Пылесос",
+      "price": 4000,
+      "creator": "",
+      "type": "Техника",
+      "weight": 5,
+      "quantity": 200
+    },
+    {
+      "id": 4,
+      "title": "Книга Гарри Поттер",
+      "price": 400,
+      "creator": "",
+      "type": "Книги",
+      "weight": 0.3,
+      "quantity": 0
     }
   ]
 }

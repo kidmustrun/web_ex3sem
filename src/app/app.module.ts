@@ -5,7 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './catalog/catalog.component';
-import {Routes, RouterModule} from '@angular/router'
+import {Routes, RouterModule} from '@angular/router';
+import { SortPipe } from './pipes/sort.pipe';
+import { FilterCategoryPipe } from './pipes/filter-category.pipe';
+import { FindPositivePipe } from './pipes/find-positive.pipe';
+
 
 const appRoutes: Routes =[
   {path: '', component: AboutComponent},
@@ -15,7 +19,11 @@ const appRoutes: Routes =[
   declarations: [
     AppComponent,
     AboutComponent,
-    CatalogComponent
+    CatalogComponent,
+    SortPipe,
+    FilterCategoryPipe,
+    FindPositivePipe,
+    
   ],
   imports: [
     FormsModule,
